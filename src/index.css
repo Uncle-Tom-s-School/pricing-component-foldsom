@@ -1,23 +1,147 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-:root{
-  font-family: sans-serif;
-  --primary-color: rgb(0, 136, 255);
-  --card-bg-color: rgba(255, 255, 255, 0.9);
-}
-
-#root{
-  width: 100%;
+#root {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-image: url("../src/assets/background.jpg");
+  justify-content: center;
+  gap: 3rem;
+  background-image: url("./assets/background.jpg");
   background-size: cover;
-  background-position-x: right;
-  background-position-y: bottom;
+  background-position: center;
+}
+
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.toggle span {
+  opacity: 0.6;
+}
+
+.toggle .active {
+  opacity: 1;
+}
+
+.toggle button {
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: #cfcfcf;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle button.yearly {
+  background: #0088ff;
+}
+
+.circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: 0.3s;
+}
+
+button.yearly .circle {
+  left: 27px;
+}
+
+
+.pricing-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+
+.price-card {
+  width: 300px;
+  min-height: 420px;
+  background: #fffaf0;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.price-card h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+
+.price {
+  height: 3.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.price span {
+  font-size: 1rem;
+}
+
+.hidden {
+  visibility: hidden; /* 🔑 helyet foglal */
+}
+
+.visible {
+  visibility: visible;
+}
+
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.price-card li {
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+}
+
+
+.btn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #0088ff;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.price-card.highlighted {
+  background: #0088ff;
+  color: white;
+  transform: translateY(-12px);
+}
+
+.price-card.highlighted .btn {
+  background: white;
+  color: #0088ff;
 }
